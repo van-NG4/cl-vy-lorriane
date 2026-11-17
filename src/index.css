@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-serif: "Lora", Georgia, serif;
+  --font-script: "Pinyon Script", cursive;
+
+  --color-ivory: #FBF9F5;
+  --color-cream: #F5EFE4;
+  --color-parchment: #EBE2D2;
+  --color-forest: #1B3B2B;
+  --color-forest-deep: #12291E;
+  --color-champagne: #B89352;
+  --color-champagne-light: #D4B87A;
+  --color-ink: #1D2B22;
+  --color-ink-muted: #526157;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-serif);
+    background-color: #FBF9F5;
+    color: #1D2B22;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Subtle paper grain overlay using CSS only */
+.paper-texture {
+  background-image: radial-gradient(rgba(27, 59, 43, 0.035) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+@keyframes gentle-sway {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(1.6deg) translateY(-3px);
+  }
+}
+
+.botanical-sway {
+  animation: gentle-sway 9s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.envelope-scene {
+  position: relative;
+  display: block;
+  perspective: 900px;
+  transform: translateY(0);
+  transition: transform 280ms ease;
+}
+
+.envelope-scene:hover:not(.is-open) {
+  transform: translateY(-4px);
+}
+
+.envelope-shadow {
+  position: absolute;
+  inset: auto 8% 2%;
+  height: 18px;
+  border-radius: 50%;
+  background: rgb(70 54 47 / 14%);
+  filter: blur(12px);
+}
+
+.envelope-back,
+.envelope-front,
+.envelope-flap {
+  position: absolute;
+  inset: 12% 2% 5%;
+}
+
+.envelope-back {
+  z-index: 1;
+  background: #d7c8b3;
+  border: 1px solid rgb(141 117 85 / 35%);
+  box-shadow: 0 18px 36px rgb(70 54 47 / 12%);
+}
+
+.envelope-card {
+  position: absolute;
+  z-index: 2;
+  left: 9%;
+  right: 9%;
+  bottom: 11%;
+  height: 78%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #faf8f4;
+  border: 1px solid rgb(198 164 119 / 80%);
+  box-shadow: 0 4px 12px rgb(70 54 47 / 10%);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1) 350ms, opacity 450ms ease 350ms;
+}
+
+.envelope-card-rule {
+  width: 36px;
+  height: 1px;
+  margin-bottom: 12px;
+  background: #c6a477;
+}
+
+.envelope-flap {
+  z-index: 4;
+  inset: 12% 2% auto;
+  height: 46%;
+  background: #c8b59b;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: 50% 0;
+  backface-visibility: visible;
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.envelope-front {
+  z-index: 3;
+  background: #e3d6c3;
+  clip-path: polygon(0 0, 50% 58%, 100% 0, 100% 100%, 0 100%);
+  border: 1px solid rgb(141 117 85 / 28%);
+}
+
+.envelope-seal {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 49%;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #aa875b;
+  border-radius: 50%;
+  background: #b89368;
+  color: #faf8f4;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  box-shadow: 0 2px 6px rgb(70 54 47 / 16%);
+  transform: translate(-50%, -50%);
+  transition: opacity 250ms ease;
+}
+
+.envelope-scene.is-open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope-scene.is-open .envelope-card {
+  opacity: 1;
+  transform: translateY(-74px);
+}
+
+.envelope-scene.is-open .envelope-seal {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .envelope-scene,
+  .envelope-card,
+  .envelope-flap,
+  .envelope-seal {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Clery & Loriane — Mariage 27 & 28 Février 2027",
+  "description": "Site officiel du mariage de Clery et Loriane à Brazzaville, République du Congo. Découvrez notre histoire, le programme des deux journées, téléchargez l'invitation officielle et confirmez votre présence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
