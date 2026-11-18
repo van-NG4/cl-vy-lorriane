@@ -26,7 +26,7 @@ export function StorySection() {
           </h2>
           <p className="mt-4 text-base text-[#526157] leading-relaxed">
             Cinq chapitres pensés comme les pages d’un journal intime, prêts à accueillir les
-            souvenirs et les mots authentiques de Clery et Loriane.
+            souvenirs et les mots authentiques de Clevy et Lorriane.
           </p>
           <OrnamentalDivider className="mt-7" />
         </motion.div>

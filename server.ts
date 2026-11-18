@@ -162,7 +162,7 @@ async function startServer(): Promise<void> {
   }
 
   app.listen(port, '0.0.0.0', () => {
-    console.log(`Serveur Clery & Loriane démarré sur le port ${port}`);
+    console.log(`Serveur Clevy & Lorriane démarré sur le port ${port}`);
   });
 }
 

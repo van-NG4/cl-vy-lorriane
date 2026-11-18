@@ -70,7 +70,7 @@ export function EnvelopeIntro() {
               <span className="envelope-shadow" aria-hidden="true" />
               <span className="envelope-card" aria-hidden="true">
                 <span className="envelope-card-rule" />
-                <span className="font-script text-4xl leading-none text-[#46362F] sm:text-5xl">Clery &amp; Loriane</span>
+                <span className="font-script text-4xl leading-none text-[#46362F] sm:text-5xl">Clevy &amp; Lorriane</span>
                 <span className="mt-3 block text-[9px] uppercase tracking-[0.19em] text-[#8D7555]">
                   27 &amp; 28 février · Brazzaville
                 </span>
@@ -95,7 +95,7 @@ export function EnvelopeIntro() {
               animate={{ opacity: opened ? 1 : 0, y: opened ? 0 : 12 }}
               transition={{ duration: prefersReducedMotion ? 0 : 0.8, delay: opened && !prefersReducedMotion ? 0.7 : 0 }}
             >
-              Clery &amp; Loriane
+              Clevy &amp; Lorriane
             </motion.p>
             <button
               type="button"

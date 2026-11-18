@@ -21,7 +21,7 @@ export async function downloadInvitationImage(
   const blob = await response.blob();
   const objectUrl = URL.createObjectURL(blob);
   try {
-    triggerDownload(objectUrl, 'Invitation-Clery-et-Loriane.jpg');
+    triggerDownload(objectUrl, 'Invitation-Clevy-et-Lorriane.jpg');
   } finally {
     setTimeout(() => URL.revokeObjectURL(objectUrl), 1500);
   }
@@ -56,7 +56,7 @@ export async function downloadInvitationPdf(
   const pdf = new jsPDF({
     orientation: isLandscape ? 'landscape' : 'portrait',
     unit: 'mm',
-    format: 'a4',
+    format: 'a5',
     compress: true,
   });
 
@@ -100,17 +100,17 @@ export async function downloadInvitationPdf(
     { align: 'center' },
   );
 
-  pdf.save('Invitation-Mariage-Clery-et-Loriane.pdf');
+  pdf.save('Invitation-Mariage-Clevy-et-Lorriane.pdf');
 }
 
 export function getGoogleCalendarUrl(): string {
   const params = new URLSearchParams({
     action: 'TEMPLATE',
-    text: 'Mariage de Clery & Loriane',
+    text: 'Mariage de Clevy & Lorriane',
     dates: '20270227/20270301',
     location: 'Brazzaville, République du Congo',
     details:
-      "Célébration du mariage de Clery & Loriane les 27 et 28 février 2027 à Brazzaville. Une histoire qui s'écrit à deux, et dont vous faites partie.",
+      "Célébration du mariage de Clevy & Lorriane les 27 et 28 février 2027 à Brazzaville. Une histoire qui s'écrit à deux, et dont vous faites partie.",
   });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
@@ -119,7 +119,7 @@ export function downloadWeddingIcs(): void {
   const icsLines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Clery et Loriane//Mariage 2027//FR',
+    'PRODID:-//Clevy et Lorriane//Mariage 2027//FR',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     'BEGIN:VEVENT',
@@ -127,9 +127,9 @@ export function downloadWeddingIcs(): void {
     'DTSTAMP:20261117T000000Z',
     'DTSTART;VALUE=DATE:20270227',
     'DTEND;VALUE=DATE:20270301',
-    'SUMMARY:Mariage de Clery & Loriane',
+    'SUMMARY:Mariage de Clevy & Lorriane',
     'LOCATION:Brazzaville, République du Congo',
-    "DESCRIPTION:Célébration du mariage de Clery & Loriane les 27 et 28 février 2027 à Brazzaville. Une histoire qui s'écrit à deux.",
+    "DESCRIPTION:Célébration du mariage de Clevy & Lorriane les 27 et 28 février 2027 à Brazzaville. Une histoire qui s'écrit à deux.",
     'STATUS:CONFIRMED',
     'END:VEVENT',
     'END:VCALENDAR',
@@ -140,7 +140,7 @@ export function downloadWeddingIcs(): void {
   });
   const url = URL.createObjectURL(blob);
   try {
-    triggerDownload(url, 'Mariage-Clery-et-Loriane-2027.ics');
+    triggerDownload(url, 'Mariage-Clevy-et-Lorriane-2027.ics');
   } finally {
     setTimeout(() => URL.revokeObjectURL(url), 1500);
   }

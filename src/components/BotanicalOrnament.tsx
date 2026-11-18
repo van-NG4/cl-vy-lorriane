@@ -123,7 +123,7 @@ export function EditorialImage({
   alt,
   className = '',
   imgClassName = 'w-full h-full object-cover',
-  fallbackTitle = 'Clery & Loriane',
+  fallbackTitle = 'Clevy & Lorriane',
   loading = 'lazy',
 }: EditorialImageProps) {
   const [hasError, setHasError] = useState(false);

@@ -27,10 +27,10 @@ export function ClosingSection() {
               <div className="p-3 bg-[#FFFDF9] border border-[#B89352]/35">
                 <EditorialImage
                   src={WEDDING_ASSETS.storyWalk}
-                  alt="Clery et Loriane marchant ensemble, sourire complice"
+                  alt="Clevy et Lorriane marchant ensemble, sourire complice"
                   className="aspect-[4/3] w-full"
                   imgClassName="w-full h-full object-cover"
-                  fallbackTitle="Clery & Loriane"
+                  fallbackTitle="Clevy & Lorriane"
                 />
               </div>
             </div>
@@ -49,7 +49,7 @@ export function ClosingSection() {
               <div className="space-y-1">
                 <p className="text-sm uppercase tracking-[0.18em] text-[#526157]">Avec amour,</p>
                 <p className="font-script text-4xl sm:text-5xl text-[#1B3B2B]">
-                  Clery &amp; Loriane.
+                  Clevy &amp; Lorriane.
                 </p>
               </div>
             </div>

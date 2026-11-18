@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Download, FileText, Maximize2, Share2, X } from 'lucide-react';
+import { Download, FileText, Maximize2, MessageCircle, Share2, X } from 'lucide-react';
 import { WEDDING_ASSETS, WEDDING_IDENTITY } from '../data/weddingData';
 import { downloadInvitationImage, downloadInvitationPdf } from '../utils/downloads';
 import { OrnamentalDivider } from './BotanicalOrnament';
@@ -62,8 +62,8 @@ export function InvitationSection() {
     setSharing(true);
     try {
       const shareData = {
-        title: 'Clery & Loriane — Invitation de mariage',
-        text: `Retrouvez l’invitation au mariage de Clery & Loriane, les ${WEDDING_IDENTITY.datesLabel} à Brazzaville.`,
+        title: 'Clevy & Lorriane — Invitation de mariage',
+        text: `Retrouvez l’invitation au mariage de Clevy & Lorriane, les ${WEDDING_IDENTITY.datesLabel} à Brazzaville.`,
         url: window.location.href,
       };
       if (navigator.share && (!navigator.canShare || navigator.canShare(shareData))) {
@@ -82,6 +82,8 @@ export function InvitationSection() {
       setSharing(false);
     }
   };
+
+  const whatsappText = `Avec joie, nous vous partageons l’invitation au mariage de Clevy & Lorriane, les ${WEDDING_IDENTITY.datesLabel} à ${WEDDING_IDENTITY.locationFull}. ${window.location.href}`;
 
   return (
     <section id="invitation" className="py-20 sm:py-28 bg-[#FBF9F5] paper-texture">
@@ -130,7 +132,7 @@ export function InvitationSection() {
                   setFeedback(null);
                   setErrorMsg(null);
                 }}
-                className={`px-4 py-1.5 text-xs uppercase tracking-[0.12em] whitespace-nowrap transition-colors ${
+                className={`px-3 py-1.5 text-[10px] uppercase tracking-[0.12em] whitespace-nowrap transition-colors sm:px-4 sm:text-xs ${
                   version === 'improved'
                     ? 'bg-[#1B3B2B] text-[#FBF9F5]'
                     : 'text-[#526157] hover:text-[#1B3B2B]'
@@ -147,7 +149,7 @@ export function InvitationSection() {
                   setFeedback(null);
                   setErrorMsg(null);
                 }}
-                className={`px-4 py-1.5 text-xs uppercase tracking-[0.12em] whitespace-nowrap transition-colors ${
+                className={`px-3 py-1.5 text-[10px] uppercase tracking-[0.12em] whitespace-nowrap transition-colors sm:px-4 sm:text-xs ${
                   version === 'original'
                     ? 'bg-[#1B3B2B] text-[#FBF9F5]'
                     : 'text-[#526157] hover:text-[#1B3B2B]'
@@ -186,7 +188,7 @@ export function InvitationSection() {
                 type="button"
                 onClick={handleDownloadPdf}
                 disabled={downloadingPdf}
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-4 text-xs uppercase tracking-[0.16em] font-medium bg-[#1B3B2B] text-[#FBF9F5] hover:bg-[#12291E] disabled:opacity-60 transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B89352]"
+                className="inline-flex w-full max-w-full items-center justify-center gap-2.5 px-4 py-4 text-center text-xs uppercase tracking-[0.16em] font-medium bg-[#1B3B2B] text-[#FBF9F5] hover:bg-[#12291E] disabled:opacity-60 transition-colors whitespace-normal sm:w-auto sm:px-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B89352]"
               >
                 <FileText className="w-4 h-4 text-[#D4B87A]" strokeWidth={1.6} aria-hidden="true" />
                 <span>
@@ -198,7 +200,7 @@ export function InvitationSection() {
                 type="button"
                 onClick={handleDownloadImage}
                 disabled={downloadingImg}
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-4 text-xs uppercase tracking-[0.16em] font-medium text-[#1B3B2B] bg-[#FFFDF9] border border-[#B89352]/70 hover:border-[#1B3B2B] hover:bg-[#F5EFE4] disabled:opacity-60 transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B3B2B]"
+                className="inline-flex w-full max-w-full items-center justify-center gap-2.5 px-4 py-4 text-center text-xs uppercase tracking-[0.16em] font-medium text-[#1B3B2B] bg-[#FFFDF9] border border-[#B89352]/70 hover:border-[#1B3B2B] hover:bg-[#F5EFE4] disabled:opacity-60 transition-colors whitespace-normal sm:w-auto sm:px-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B3B2B]"
               >
                 <Download className="w-4 h-4 text-[#B89352]" strokeWidth={1.6} aria-hidden="true" />
                 <span>
@@ -210,11 +212,21 @@ export function InvitationSection() {
                 type="button"
                 onClick={handleShare}
                 disabled={sharing}
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-4 text-xs uppercase tracking-[0.16em] font-medium text-[#1B3B2B] bg-transparent border border-[#B89352]/50 hover:bg-[#F5EFE4] disabled:opacity-60 transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B3B2B]"
+                className="inline-flex w-full max-w-full items-center justify-center gap-2.5 px-4 py-4 text-center text-xs uppercase tracking-[0.16em] font-medium text-[#1B3B2B] bg-transparent border border-[#B89352]/50 hover:bg-[#F5EFE4] disabled:opacity-60 transition-colors whitespace-normal sm:w-auto sm:px-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B3B2B]"
               >
                 <Share2 className="w-4 h-4 text-[#B89352]" strokeWidth={1.6} aria-hidden="true" />
                 <span>{sharing ? 'Préparation…' : 'Partager l’invitation'}</span>
               </button>
+
+              <a
+                href={`https://wa.me/?text=${encodeURIComponent(whatsappText)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full max-w-full items-center justify-center gap-2.5 px-4 py-4 text-center text-xs uppercase tracking-[0.16em] font-medium text-[#1B3B2B] bg-[#F1E9DC] border border-[#B89352]/50 hover:bg-[#EBE2D2] transition-colors whitespace-normal sm:w-auto sm:px-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B3B2B]"
+              >
+                <MessageCircle className="w-4 h-4 text-[#B89352]" strokeWidth={1.6} aria-hidden="true" />
+                <span>Partager par WhatsApp</span>
+              </a>
             </div>
 
             <div className="mt-4 min-h-[24px]">

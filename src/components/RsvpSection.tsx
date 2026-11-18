@@ -149,8 +149,8 @@ export function RsvpSection() {
                 {submittedRecord.attending === 'yes'
                   ? `Votre présence est bien enregistrée pour ${submittedRecord.guestCount} ${
                       submittedRecord.guestCount > 1 ? 'personnes' : 'personne'
-                    }. Clery et Loriane ont hâte de célébrer ce moment avec vous.`
-                  : 'Votre message a bien été enregistré. Même à distance, vos pensées accompagnent chaleureusement Clery et Loriane.'}
+                    }. Clevy et Lorriane ont hâte de célébrer ce moment avec vous.`
+                  : 'Votre message a bien été enregistré. Même à distance, vos pensées accompagnent chaleureusement Clevy et Lorriane.'}
               </p>
 
               <div className="pt-4">

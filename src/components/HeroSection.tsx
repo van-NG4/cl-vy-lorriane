@@ -1,15 +1,75 @@
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowDown } from 'lucide-react';
 import { WEDDING_ASSETS, WEDDING_IDENTITY } from '../data/weddingData';
-import { BotanicalSprig, EditorialImage, OrnamentalDivider } from './BotanicalOrnament';
-import { ImageReveal } from './CinematicMotion';
+import { BotanicalSprig, OrnamentalDivider } from './BotanicalOrnament';
+import heroBackgroundVideo from '../assets/images/Clery & Loriane — Une histoire qui s’écrit à deux_720p.mp4';
+
+function canPlayBackgroundVideo(): boolean {
+  if (typeof window === 'undefined') return false;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const connection = (navigator as Navigator & {
+    connection?: { saveData?: boolean; effectiveType?: string };
+  }).connection;
+  return !reducedMotion && !connection?.saveData && connection?.effectiveType !== '2g';
+}
 
 export function HeroSection() {
+  const [videoReady, setVideoReady] = useState(canPlayBackgroundVideo);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updateVideoForMotionPreference = (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        setVideoReady(false);
+        setVideoLoaded(false);
+      } else {
+        setVideoReady(canPlayBackgroundVideo());
+      }
+    };
+    motionPreference.addEventListener('change', updateVideoForMotionPreference);
+    return () => motionPreference.removeEventListener('change', updateVideoForMotionPreference);
+  }, []);
+
+  useEffect(() => {
+    if (!videoReady || !videoRef.current) return;
+    void videoRef.current.play().catch(() => {
+      // Keep the poster visible if a browser blocks autoplay; do not remove the background layer.
+    });
+  }, [videoReady]);
+
   return (
     <section
       id="accueil"
-      className="relative pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28 overflow-hidden paper-texture"
+      className="relative flex min-h-[100svh] items-center overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-20 paper-texture"
     >
+      <div className={`hero-film-background ${videoLoaded ? 'is-loaded' : ''}`} aria-hidden="true">
+        <div
+          className="hero-film-poster"
+          style={{ backgroundImage: `url(${WEDDING_ASSETS.heroPortrait})` }}
+        />
+        {videoReady && (
+          <video
+            ref={videoRef}
+            className={`hero-film-video ${videoLoaded ? 'is-loaded' : ''}`}
+            src={heroBackgroundVideo}
+            poster={WEDDING_ASSETS.heroPortrait}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+            onCanPlay={() => setVideoLoaded(true)}
+            onError={(event) => {
+              event.currentTarget.hidden = true;
+            }}
+          />
+        )}
+        <div className="hero-film-wash" />
+      </div>
+
       {/* Subtle botanical corner ornaments */}
       <BotanicalSprig className="pointer-events-none absolute -top-4 -left-8 w-44 sm:w-56 opacity-75 botanical-sway" />
       <BotanicalSprig
@@ -18,10 +78,10 @@ export function HeroSection() {
         className="pointer-events-none hidden md:block absolute bottom-4 -right-8 w-52 opacity-65 botanical-sway"
       />
 
-      <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-stretch">
-          {/* Left Column: Progressive Literary Opening */}
-          <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left py-2">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+          {/* Editorial copy stays on the calm side of the moving image. */}
+          <div className="hero-copy-panel lg:col-span-7 flex flex-col justify-center text-center lg:text-left py-5 sm:py-8">
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -37,8 +97,8 @@ export function HeroSection() {
               transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="mt-4 font-script text-6xl sm:text-7xl xl:text-[5.5rem] leading-[1.08] text-[#1B3B2B] font-normal"
             >
-              <span className="sr-only">Clery et Loriane — Mariage à Brazzaville</span>
-              <span aria-hidden="true">Clery &amp; Loriane</span>
+              <span className="sr-only">Clevy et Lorriane — Mariage à Brazzaville</span>
+              <span aria-hidden="true">Clevy &amp; Lorriane</span>
             </motion.h1>
 
             <motion.p
@@ -107,33 +167,6 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right Column: Couple Portrait in Editorial Botanical Frame */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.95, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 flex"
-          >
-            <div className="relative w-full p-3 sm:p-4 bg-[#FFFDF9] border border-[#B89352]/40">
-              {/* Inner hairline border */}
-              <div className="relative h-full border border-[#B89352]/30 p-2 bg-[#FBF9F5]">
-                <ImageReveal className="w-full aspect-[3/4] lg:h-full">
-                  <EditorialImage
-                    src={WEDDING_ASSETS.heroPortrait}
-                    alt="Portrait de Clery et Loriane dans la lumière dorée d'un jardin"
-                    loading="eager"
-                    className="w-full h-full"
-                    imgClassName="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
-                    fallbackTitle="Clery & Loriane"
-                  />
-                </ImageReveal>
-                <div className="pt-3 pb-1 px-2 flex items-center justify-between text-xs text-[#526157] font-display italic">
-                  <span>{WEDDING_IDENTITY.centralConcept}</span>
-                  <span className="text-[#B89352]">2027</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

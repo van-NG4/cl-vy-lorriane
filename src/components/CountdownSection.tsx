@@ -102,7 +102,7 @@ export function CountdownSection() {
           {/* Live Dynamic Countdown */}
           {timeLeft.isPast ? (
             <p className="font-display italic text-2xl sm:text-3xl text-[#D4B87A] py-6">
-              Le grand jour est arrivé — célébrons l’union de Clery &amp; Loriane.
+              Le grand jour est arrivé — célébrons l’union de Clevy &amp; Lorriane.
             </p>
           ) : (
             <div
@@ -134,7 +134,7 @@ export function CountdownSection() {
               onClick={() => setCalendarMenuOpen((prev) => !prev)}
               aria-expanded={calendarMenuOpen}
               aria-haspopup="menu"
-              className="inline-flex items-center justify-center gap-3 px-7 py-4 text-xs uppercase tracking-[0.18em] font-medium bg-[#FBF9F5] text-[#1B3B2B] hover:bg-[#F5EFE4] transition-colors duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4B87A]"
+              className="inline-flex max-w-full items-center justify-center gap-3 px-4 py-4 text-center text-xs uppercase tracking-[0.14em] font-medium bg-[#FBF9F5] text-[#1B3B2B] hover:bg-[#F5EFE4] transition-colors duration-200 whitespace-normal sm:px-7 sm:tracking-[0.18em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4B87A]"
             >
               <CalendarPlus className="w-4 h-4 text-[#B89352]" strokeWidth={1.6} aria-hidden="true" />
               <span>Ajouter à mon calendrier</span>

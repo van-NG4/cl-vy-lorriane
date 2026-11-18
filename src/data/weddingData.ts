@@ -45,9 +45,9 @@ export interface GalleryItem {
 }
 
 export const WEDDING_IDENTITY = {
-  coupleNames: 'Clery & Loriane',
-  groomName: 'Clery',
-  brideName: 'Loriane',
+  coupleNames: 'Clevy & Lorriane',
+  groomName: 'Clevy',
+  brideName: 'Lorriane',
   datesLabel: '27 & 28 février 2027',
   datesUppercase: '27 & 28 FÉVRIER 2027',
   city: 'Brazzaville',
@@ -62,7 +62,7 @@ export const WEDDING_IDENTITY = {
     "Chaque histoire a un commencement. La nôtre continue de s'écrire, et nous aimerions que vous soyez présents pour en tourner les plus belles pages.",
   closingText:
     "Ce n'est pas simplement une date que nous vous invitons à retenir. C'est le commencement d'un nouveau chapitre, une histoire que nous avons hâte de partager avec vous.",
-  closingSignature: 'Avec amour,\nClery & Loriane.',
+  closingSignature: 'Avec amour,\nClevy & Lorriane.',
 } as const;
 
 export const WEDDING_ASSETS = {
@@ -78,7 +78,7 @@ export const WEDDING_ASSETS = {
 
 /**
  * Chapitres modifiables de l'histoire du couple.
- * Aucun événement personnel n'est inventé : chaque chapitre attend le texte authentique de Clery & Loriane.
+ * Aucun événement personnel n'est inventé : chaque chapitre attend le texte authentique de Clevy & Lorriane.
  */
 export const STORY_CHAPTERS: StoryChapter[] = [
   {
@@ -87,10 +87,10 @@ export const STORY_CHAPTERS: StoryChapter[] = [
     title: 'La rencontre',
     subtitle: 'Les premières lignes',
     content:
-      "Tout grand récit commence par un instant suspendu. Cet espace est réservé aux mots de Clery et Loriane pour raconter, avec leurs propres souvenirs, le jour où leurs chemins se sont croisés.",
+      "Tout grand récit commence par un instant suspendu. Cet espace est réservé aux mots de Clevy et Lorriane pour raconter, avec leurs propres souvenirs, le jour où leurs chemins se sont croisés.",
     editableNote: 'Texte personnel du couple à insérer',
     imageUrl: WEDDING_ASSETS.storyWalk,
-    imageAlt: 'Clery et Loriane marchant main dans la main sous la lumière dorée',
+    imageAlt: 'Clevy et Lorriane marchant main dans la main sous la lumière dorée',
     imageCaption: 'Premiers pas côte à côte',
   },
   {
@@ -99,7 +99,7 @@ export const STORY_CHAPTERS: StoryChapter[] = [
     title: 'Les premiers souvenirs',
     subtitle: 'La complicité qui grandit',
     content:
-      "Des conversations prolongées, des éclats de rire et des moments simples devenus précieux. Clery et Loriane partageront ici les souvenirs fondateurs de leur histoire.",
+      "Des conversations prolongées, des éclats de rire et des moments simples devenus précieux. Clevy et Lorriane partageront ici les souvenirs fondateurs de leur histoire.",
     editableNote: 'Texte personnel du couple à insérer',
     imageUrl: WEDDING_ASSETS.preparationFlatlay,
     imageAlt: 'Détails de papeterie en coton ivoire, sceau doré et roses blanches',
@@ -114,7 +114,7 @@ export const STORY_CHAPTERS: StoryChapter[] = [
       "Il arrive un moment où l'on comprend que l'on regarde dans la même direction. Ce chapitre accueillera le récit de cet instant où tout est devenu une évidence.",
     editableNote: 'Texte personnel du couple à insérer',
     imageUrl: WEDDING_ASSETS.heroPortrait,
-    imageAlt: 'Portrait éditorial de Clery et Loriane dans un jardin botanique',
+    imageAlt: 'Portrait éditorial de Clevy et Lorriane dans un jardin botanique',
     imageCaption: 'Deux regards tournés vers demain',
   },
   {
@@ -126,7 +126,7 @@ export const STORY_CHAPTERS: StoryChapter[] = [
       "Un mot murmuré, un regard sincère et la promesse de bâtir ensemble. Cet espace est prêt à recevoir l'histoire de leur engagement et de la demande.",
     editableNote: 'Texte personnel du couple à insérer',
     imageUrl: WEDDING_ASSETS.invitation,
-    imageAlt: 'Invitation officielle botanique et or champagne de Clery et Loriane',
+    imageAlt: 'Invitation officielle botanique et or champagne de Clevy et Lorriane',
     imageCaption: 'La promesse scellée sur papier',
   },
   {
@@ -135,7 +135,7 @@ export const STORY_CHAPTERS: StoryChapter[] = [
     title: "Le début d'une nouvelle aventure",
     subtitle: '27 & 28 février 2027 · Brazzaville',
     content:
-      "Bientôt, entourés de leurs familles et de leurs proches à Brazzaville, Clery et Loriane ouvriront un nouveau tome de leur vie. Vous faites désormais partie de cette histoire.",
+      "Bientôt, entourés de leurs familles et de leurs proches à Brazzaville, Clevy et Lorriane ouvriront un nouveau tome de leur vie. Vous faites désormais partie de cette histoire.",
     editableNote: 'Texte personnel du couple à insérer',
     imageUrl: WEDDING_ASSETS.ceremonyGarden,
     imageAlt: 'Jardin fleuri préparé pour la célébration du mariage',
@@ -156,7 +156,7 @@ export const PROGRAM_DAYS: ProgramDay[] = [
     time: 'Horaire à confirmer',
     address: 'Lieu à Brazzaville — communiqué prochainement',
     description:
-      "Ouverture des festivités réunissant les deux familles et les proches pour célébrer l'union de Clery et Loriane. Le programme détaillé et les horaires précis seront partagés ici très bientôt.",
+      "Ouverture des festivités réunissant les deux familles et les proches pour célébrer l'union de Clevy et Lorriane. Le programme détaillé et les horaires précis seront partagés ici très bientôt.",
     imageUrl: WEDDING_ASSETS.storyWalk,
     imageAlt: 'Atmosphère chaleureuse de la première journée',
     editableNotice: 'Détails horaires et adresse modifiables dès confirmation',
@@ -189,9 +189,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'gal-1',
     title: 'Sous la lumière de Brazzaville',
     category: 'Le Couple',
-    caption: 'Portrait éditorial — Clery & Loriane dans une lumière dorée de fin d’après-midi.',
+    caption: 'Portrait éditorial — Clevy & Lorriane dans une lumière dorée de fin d’après-midi.',
     imageUrl: WEDDING_ASSETS.heroPortrait,
-    alt: 'Portrait romantique de Clery et Loriane entourés de feuillages',
+    alt: 'Portrait romantique de Clevy et Lorriane entourés de feuillages',
     spanClass: 'md:col-span-7 md:row-span-2',
     aspectClass: 'aspect-[3/4] md:aspect-auto md:h-full',
   },
@@ -201,7 +201,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Souvenirs',
     caption: 'Instants spontanés et rires partagés le long d’une allée botanique.',
     imageUrl: WEDDING_ASSETS.storyWalk,
-    alt: 'Clery et Loriane marchant ensemble sur un sentier arboré',
+    alt: 'Clevy et Lorriane marchant ensemble sur un sentier arboré',
     spanClass: 'md:col-span-5',
     aspectClass: 'aspect-[4/3]',
   },
@@ -221,7 +221,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Moments importants',
     caption: 'L’invitation officielle, hommage aux teintes ivoire, vert forêt et or champagne.',
     imageUrl: WEDDING_ASSETS.invitation,
-    alt: 'Carte d’invitation officielle de Clery et Loriane',
+    alt: 'Carte d’invitation officielle de Clevy et Lorriane',
     spanClass: 'md:col-span-5',
     aspectClass: 'aspect-[3/4]',
   },
@@ -239,9 +239,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'gal-6',
     title: 'Élégance en violet',
     category: 'Le Couple',
-    caption: 'Clery et Loriane partagent un tendre moment dans leurs tenues de cérémonie.',
+    caption: 'Clevy et Lorriane partagent un tendre moment dans leurs tenues de cérémonie.',
     imageUrl: WEDDING_ASSETS.couplePurpleDiptych,
-    alt: 'Diptyque de Clery et Loriane en costume bleu et tenue violette, dans un jardin.',
+    alt: 'Diptyque de Clevy et Lorriane en costume bleu et tenue violette, dans un jardin.',
     spanClass: 'md:col-span-6',
     aspectClass: 'aspect-[4/3]',
   },
@@ -249,9 +249,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'gal-7',
     title: 'Un instant à deux',
     category: 'Le Couple',
-    caption: 'Deux portraits complices de Clery et Loriane, entre sourires et douceur.',
+    caption: 'Deux portraits complices de Clevy et Lorriane, entre sourires et douceur.',
     imageUrl: WEDDING_ASSETS.coupleRomanticDiptych,
-    alt: 'Diptyque de Clery et Loriane : un portrait rapproché et un moment complice assis.',
+    alt: 'Diptyque de Clevy et Lorriane : un portrait rapproché et un moment complice assis.',
     spanClass: 'md:col-span-6',
     aspectClass: 'aspect-[4/3]',
   },

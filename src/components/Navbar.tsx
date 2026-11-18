@@ -40,7 +40,7 @@ export function Navbar() {
           href="#accueil"
           className="font-display text-2xl sm:text-[26px] font-medium tracking-tight text-[#1B3B2B] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B3B2B]/50 rounded"
         >
-          Clery &amp; Loriane
+          Clevy &amp; Lorriane
         </a>
 
         {/* Zone 2: Desktop Navigation */}
