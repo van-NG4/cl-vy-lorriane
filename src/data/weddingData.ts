@@ -1,12 +1,14 @@
-import couplePurpleDiptych from '../assets/images/Couple élégant au jardin.png';
-import coupleRomanticDiptych from '../assets/images/Portrait romantique en violet et bleu.png';
+const couplePhoto = (name: string) =>
+  `/assets/aistudio/gallery/couple/WhatsApp Image 2026-11-20 at ${name}.jpeg`;
 
 export interface StoryChapter {
   id: string;
   numeral: string;
   title: string;
   subtitle: string;
+  hook: string;
   content: string;
+  conclusion: string;
   editableNote: string;
   imageUrl: string;
   imageAlt: string;
@@ -68,10 +70,10 @@ export const WEDDING_IDENTITY = {
 export const WEDDING_ASSETS = {
   invitation: '/src/assets/images/invitation_officielle_v2_1794910938778.jpg',
   originalInvitation: '/assets/aistudio/WhatsApp_Image_2026-11-16_at_21.37.36_005a1fbe.jpeg',
-  heroPortrait: '/src/assets/images/couple_hero_portrait_1794908618282.jpg',
-  storyWalk: '/src/assets/images/couple_story_walk_1794908619291.jpg',
-  couplePurpleDiptych,
-  coupleRomanticDiptych,
+  heroPortrait: couplePhoto('08.05.54'),
+  storyWalk: couplePhoto('08.04.06'),
+  couplePurpleDiptych: couplePhoto('08.04.22'),
+  coupleRomanticDiptych: couplePhoto('08.04.19'),
   preparationFlatlay: '/src/assets/images/preparation_flatlay_1794908619640.jpg',
   ceremonyGarden: '/src/assets/images/ceremony_garden_1794908620548.jpg',
 } as const;
@@ -84,62 +86,47 @@ export const STORY_CHAPTERS: StoryChapter[] = [
   {
     id: 'chapitre-1',
     numeral: 'Chapitre I',
-    title: 'La rencontre',
-    subtitle: 'Les premières lignes',
+    title: 'Tout a commencé dans un bus...',
+    subtitle: 'La rencontre',
+    hook: 'Un simple trajet, une rencontre inattendue, le début d’une belle histoire.',
     content:
-      "Tout grand récit commence par un instant suspendu. Cet espace est réservé aux mots de Clevy et Lorriane pour raconter, avec leurs propres souvenirs, le jour où leurs chemins se sont croisés.",
-    editableNote: 'Texte personnel du couple à insérer',
-    imageUrl: WEDDING_ASSETS.storyWalk,
-    imageAlt: 'Clevy et Lorriane marchant main dans la main sous la lumière dorée',
-    imageCaption: 'Premiers pas côte à côte',
+      "Notre histoire a commencé dans un bus, un soir où nous revenions de l'église. C'est là que Clevy trouva le courage d'adresser la parole à Lorriane. On ne savait pas que ce trajet allait marquer le début d'une si belle histoire d'amour.",
+    conclusion: 'Un simple trajet, une rencontre inattendue, le début d’une belle histoire.',
+    editableNote: 'Texte officiel fourni par le couple',
+    imageUrl: couplePhoto('08.04.06'),
+    imageAlt: 'Photographie personnelle de Clevy et Lorriane',
+    imageCaption: 'Clevy & Lorriane',
   },
   {
     id: 'chapitre-2',
     numeral: 'Chapitre II',
-    title: 'Les premiers souvenirs',
-    subtitle: 'La complicité qui grandit',
+    title: 'Une complicité qui grandit',
+    subtitle: 'Notre histoire',
+    hook:
+      'De la Parole de Dieu aux fous rires partagés, chaque instant a contribué à écrire notre histoire.',
     content:
-      "Des conversations prolongées, des éclats de rire et des moments simples devenus précieux. Clevy et Lorriane partageront ici les souvenirs fondateurs de leur histoire.",
-    editableNote: 'Texte personnel du couple à insérer',
-    imageUrl: WEDDING_ASSETS.preparationFlatlay,
-    imageAlt: 'Détails de papeterie en coton ivoire, sceau doré et roses blanches',
-    imageCaption: 'Des souvenirs gravés avec tendresse',
+      'Nous nous souvenons encore de nos premières conversations, qui portaient simplement sur la Parole de Dieu, les bandes et nos activités. Au fil du temps, nous avons appris à partager de merveilleux moments ensemble : des sorties, des promenades, nos fous rires et nos taquineries.',
+    conclusion:
+      'De la Parole de Dieu aux fous rires partagés, chaque instant a contribué à écrire notre histoire.',
+    editableNote: 'Texte officiel fourni par le couple',
+    imageUrl: couplePhoto('08.04.19'),
+    imageAlt: 'Photographie personnelle de Clevy et Lorriane',
+    imageCaption: 'Des souvenirs simples devenus précieux',
   },
   {
     id: 'chapitre-3',
     numeral: 'Chapitre III',
-    title: 'Une évidence',
-    subtitle: 'L’accord des cœurs',
+    title: 'Une promesse à célébrer ensemble',
+    subtitle: 'Leur engagement',
+    hook: 'Deux cœurs, une promesse et un avenir à construire avec Dieu.',
     content:
-      "Il arrive un moment où l'on comprend que l'on regarde dans la même direction. Ce chapitre accueillera le récit de cet instant où tout est devenu une évidence.",
-    editableNote: 'Texte personnel du couple à insérer',
-    imageUrl: WEDDING_ASSETS.heroPortrait,
-    imageAlt: 'Portrait éditorial de Clevy et Lorriane dans un jardin botanique',
-    imageCaption: 'Deux regards tournés vers demain',
-  },
-  {
-    id: 'chapitre-4',
-    numeral: 'Chapitre IV',
-    title: 'Une promesse',
-    subtitle: 'L’engagement',
-    content:
-      "Un mot murmuré, un regard sincère et la promesse de bâtir ensemble. Cet espace est prêt à recevoir l'histoire de leur engagement et de la demande.",
-    editableNote: 'Texte personnel du couple à insérer',
-    imageUrl: WEDDING_ASSETS.invitation,
-    imageAlt: 'Invitation officielle botanique et or champagne de Clevy et Lorriane',
-    imageCaption: 'La promesse scellée sur papier',
-  },
-  {
-    id: 'chapitre-5',
-    numeral: 'Chapitre V',
-    title: "Le début d'une nouvelle aventure",
-    subtitle: '27 & 28 février 2027 · Brazzaville',
-    content:
-      "Bientôt, entourés de leurs familles et de leurs proches à Brazzaville, Clevy et Lorriane ouvriront un nouveau tome de leur vie. Vous faites désormais partie de cette histoire.",
-    editableNote: 'Texte personnel du couple à insérer',
-    imageUrl: WEDDING_ASSETS.ceremonyGarden,
-    imageAlt: 'Jardin fleuri préparé pour la célébration du mariage',
-    imageCaption: 'En route vers février 2027',
+      "C'est avec une immense joie que nous vous invitons les 27 et 28 février 2027 pour sceller notre amour éternel. Merci de faire partie de nos invités.\n\nLe couple EFEGNENI",
+    conclusion:
+      'Deux cœurs, une promesse et un avenir à construire avec Dieu.',
+    editableNote: 'Informations officielles communiquées par le couple',
+    imageUrl: couplePhoto('08.05.54'),
+    imageAlt: 'Portrait personnel de Clevy et Lorriane',
+    imageCaption: '27 & 28 février 2027',
   },
 ];
 

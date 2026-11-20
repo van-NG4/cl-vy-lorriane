@@ -5,22 +5,27 @@
   --font-serif: "Lora", Georgia, serif;
   --font-script: "Pinyon Script", cursive;
 
-  --color-ivory: #FBF9F5;
-  --color-cream: #F5EFE4;
-  --color-parchment: #EBE2D2;
+  --color-ivory: #FFFDF9;
+  --color-cream: #F2E9DF;
+  --color-parchment: #F2E9DF;
   --color-forest: #1B3B2B;
   --color-forest-deep: #12291E;
   --color-champagne: #B89352;
   --color-champagne-light: #D4B87A;
   --color-ink: #1D2B22;
   --color-ink-muted: #526157;
+  --color-marron: #432B24;
+  --color-marron-chocolat: #5A382B;
+  --color-terracotta: #A94F32;
+  --color-orange-brule: #D96B32;
+  --color-orange-doux: #E99A61;
 }
 
 @layer base {
   html {
     font-family: var(--font-serif);
     background-color: #FBF9F5;
-    color: #1D2B22;
+    color: #432B24;
     scroll-behavior: smooth;
   }
 
@@ -69,11 +74,11 @@
   background-position: center 42%;
   background-size: cover;
   filter: sepia(0.08) saturate(0.92);
-  opacity: 0.78;
+  opacity: 1;
 }
 
 .hero-film-background.is-loaded .hero-film-poster {
-  opacity: 0;
+  opacity: 0.28;
 }
 
 .hero-film-video {
@@ -271,6 +276,21 @@
 
 .envelope-scene.is-open .envelope-seal {
   opacity: 0;
+}
+
+.african-sunset-hero .hero-film-poster,
+.african-sunset-hero .hero-film-video {
+  filter: sepia(.12) saturate(1.08) contrast(1.02);
+}
+
+.african-sunset-hero .hero-film-wash {
+  background: linear-gradient(
+    90deg,
+    rgba(67,43,36,.72) 0%,
+    rgba(67,43,36,.48) 32%,
+    rgba(169,79,50,.18) 62%,
+    rgba(217,107,50,.08) 100%
+  );
 }
 
 @media (prefers-reduced-motion: reduce) {

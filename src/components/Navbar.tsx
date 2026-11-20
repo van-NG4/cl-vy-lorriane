@@ -30,15 +30,15 @@ export function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-40 transition-colors duration-300 ${
         scrolled || mobileOpen
-          ? 'bg-[#FBF9F5]/95 backdrop-blur-md border-b border-[#B89352]/25'
-          : 'bg-[#FBF9F5]/80 backdrop-blur-sm border-b border-transparent'
+          ? 'bg-[#FFFDF9]/95 backdrop-blur-md border-b border-[#D96B32]/25'
+          : 'bg-[#FFFDF9]/80 backdrop-blur-sm border-b border-transparent'
       }`}
     >
       <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-8">
         {/* Zone 1: Brand wordmark */}
         <a
           href="#accueil"
-          className="font-display text-2xl sm:text-[26px] font-medium tracking-tight text-[#1B3B2B] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B3B2B]/50 rounded"
+          className="font-display text-2xl sm:text-[26px] font-medium tracking-tight text-[#432B24] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D96B32]/50 rounded"
         >
           Clevy &amp; Lorriane
         </a>

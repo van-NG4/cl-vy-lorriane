@@ -4,6 +4,7 @@ import { ArrowDown } from 'lucide-react';
 import { WEDDING_ASSETS, WEDDING_IDENTITY } from '../data/weddingData';
 import { BotanicalSprig, OrnamentalDivider } from './BotanicalOrnament';
 import heroBackgroundVideo from '../assets/images/Clery & Loriane — Une histoire qui s’écrit à deux_720p.mp4';
+import heroPortraitFallback from '../assets/images/couple_hero_portrait_1794908618282.jpg';
 
 function canPlayBackgroundVideo(): boolean {
   if (typeof window === 'undefined') return false;
@@ -45,10 +46,10 @@ export function HeroSection() {
       id="accueil"
       className="relative flex min-h-[100svh] items-center overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-20 paper-texture"
     >
-      <div className={`hero-film-background ${videoLoaded ? 'is-loaded' : ''}`} aria-hidden="true">
+      <div className={`hero-film-background african-sunset-hero ${videoLoaded ? 'is-loaded' : ''}`} aria-hidden="true">
         <div
           className="hero-film-poster"
-          style={{ backgroundImage: `url(${WEDDING_ASSETS.heroPortrait})` }}
+          style={{ backgroundImage: `url(${heroPortraitFallback})` }}
         />
         {videoReady && (
           <video
@@ -88,7 +89,7 @@ export function HeroSection() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="font-display italic text-xl sm:text-2xl text-[#B89352] tracking-wide"
             >
-              {WEDDING_IDENTITY.openingPrelude}
+              « Deux cœurs, deux chemins, une seule histoire qui commence à s’écrire pour toujours. »
             </motion.p>
 
             <motion.h1
@@ -132,18 +133,6 @@ export function HeroSection() {
               <OrnamentalDivider />
             </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.75, delay: 0.72, ease: [0.16, 1, 0.3, 1] }}
-              className="max-w-xl mx-auto lg:mx-0 text-base sm:text-[17px] leading-[1.8] text-[#526157] italic"
-            >
-              « Deux cœurs, deux chemins, une seule histoire qui commence à s’écrire pour toujours. »
-            </motion.p>
-            <p className="mt-3 max-w-xl mx-auto text-sm leading-relaxed text-[#526157] lg:mx-0">
-              {WEDDING_IDENTITY.emotionalSignature}
-            </p>
-
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -152,17 +141,18 @@ export function HeroSection() {
             >
               <a
                 href="#histoire"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 text-xs uppercase tracking-[0.18em] font-medium bg-[#1B3B2B] text-[#FBF9F5] hover:bg-[#12291E] transition-colors duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B89352]"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 text-xs uppercase tracking-[0.18em] font-medium bg-[#B89352] text-[#1B3B2B] hover:bg-[#A67C2D] transition-colors duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B89352]"
               >
                 <span>Découvrir notre histoire</span>
                 <ArrowDown className="w-4 h-4" strokeWidth={1.5} aria-hidden="true" />
               </a>
 
               <a
-                href="#rsvp"
+                href={WEDDING_ASSETS.invitation}
+                download
                 className="inline-flex items-center justify-center px-7 py-4 text-xs uppercase tracking-[0.18em] font-medium text-[#1B3B2B] border border-[#B89352]/70 hover:border-[#1B3B2B] hover:bg-[#F5EFE4] transition-colors duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B3B2B]"
               >
-                Confirmer sa présence
+                Télécharger l'invitation
               </a>
             </motion.div>
           </div>
